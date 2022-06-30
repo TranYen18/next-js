@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps<ProductsProps> = async (
 
   return {
     props: {
-      products: data.map(item =>({id: item.id, name:item.name})),
+      products: data.map(item =>({id:item,name:item})),
     },
   };
 };

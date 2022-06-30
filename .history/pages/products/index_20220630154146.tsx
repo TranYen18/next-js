@@ -1,9 +1,8 @@
-import { GetStaticProps, GetStaticPropsContext} from "next";
+import { GetStaticProps, GetStaticPropsContext,GetStaticPaths } from "next";
 import Link from 'next/link';
-import React from 'react';
 
 type ProductsProps = {
-  products: any[];
+  products: any;
 };
 // client
 const Products = ({ products }: ProductsProps) => {
@@ -30,7 +29,7 @@ export const getStaticProps: GetStaticProps<ProductsProps> = async (
 
   return {
     props: {
-      products: data.map(item =>({id: item.id, name:item.name})),
+      products: data.map(item =>({id:item,name:item})),
     },
   };
 };
